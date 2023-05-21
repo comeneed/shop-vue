@@ -1,0 +1,50 @@
+export default [
+        {
+            path:'/',
+            redirect:'/Home',
+            hidden:true
+        },
+        {
+           path:"/Home",
+           name:'index',
+            component:()=>import('@/components/Home/index.vue'),
+            
+        },
+        {
+            path:'/Login',
+            component:()=>import('@/components/Login/index.vue'),
+            name:'denglu'
+        },
+        {
+            path:'/Register',
+            component:()=>import('@/components/Register')
+        },
+        {
+            path:'/Search/:keyword?',
+            component:()=>import('@/components/Search'),
+            name:"sousuo"
+        },
+        {
+            name:'xiangqing',
+            component:()=>import('@/components/Detail'),
+            path:'/Detail/:skuid'
+            // skuid就是我点击那个产品，然后根据那个产品的信息跳转到属于它的详细页中
+        },
+        {
+            name:'shopsuccess',
+            component:()=>import('@/components/Shop'),
+            path:'/shopsuccess',
+            meta:{
+                isShow:true
+            }
+        },
+        {
+            name:'gouwuce',
+            component:()=>import('@/components/ShopCar/index.vue'),
+            path:'/shopcar',
+            meta:{
+                isShow:true
+            }
+            
+        }
+]
